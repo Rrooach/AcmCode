@@ -1,20 +1,34 @@
 #include <bits/stdc++.h>
-using namespace std;
-const int maxn = 100000 + 10;
-const int INF = 2 * int(1e9) + 10;
-#define LL long long
-int cmd(int a, int b)
-{
-    return a > b;
-}
+
+using namespace std;  
+
 int main()
 {
-    int num[6] = {1, 2, 4, 7, 15, 34};
-    for (auto it : num)
-        cout << it;
+    int n, m, nearS = 100000010;
+    scanf("%d%d", &n, &m);
+    int s[n+5] = {0};
+    for (int i = 1; i <= n; ++i)
+    {
+        scanf("%d", &s[i]);
+        s[i] += s[i - 1];
+    }
+    for (int i = 1; i <= n; ++i)
+    {
+        int j = upper_bound(s + i, s + n + 1, s[i - 1] + m) - s;
+        if (s[j - 1] - s[i - 1] == m)
+        {
+            nearS = m;
+            break;
+        }
+        else if (s[j] - s[i - 1] < nearS && j <= n)
+            nearS = s[j] - s[i - 1];
+    }
+    for (int i = 1; i <= n; ++i)
+    {
+        int j = upper_bound(s + i, s + n + 1, s[i - 1] + nearS) - s;
+        if (s[j - 1] - s[i - 1] == nearS)
+            cout << i  << "-" << j - 1 << "\n";
+    }
     system("pause");
-    vector<pair<int, int>> a;
-    a.push_back(make_pair(1, 2));
-    
     return 0;
 }

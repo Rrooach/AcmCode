@@ -1,8 +1,7 @@
 {
-    "workbench.colorTheme": "One Dark Pro Vivid",
-    "atomKeymap.promptV3Features": true,
+    "workbench.colorTheme": "One Dark Pro",
+    //"atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.fontSize": 16,
     // "[cpp]": {
     //     "editor.quickSuggestions": true
     // },
@@ -36,7 +35,8 @@
         "system_error": "cpp",
         "type_traits": "cpp",
         "typeinfo": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "iomanip": "cpp"
     },
     "editor.snippetSuggestions": "top",
     "C_Cpp.clang_format_sortIncludes": true,
@@ -45,6 +45,16 @@
     "editor.formatOnType": true,
     "editor.codeActionsOnSaveTimeout": 500,
     "files.autoSave": "onFocusChange",
-    "files.autoSaveDelay": 50,
+    "files.autoSaveDelay": 500,
     "editor.hover.delay": 0,
+    "files.autoGuessEncoding": true,
+    "editor.detectIndentation": false,
+    "files.encoding": "utf8",
+    "editor.formatOnSaveTimeout": 20,
+    "editor.fontFamily": "Consolas",
+    "workbench.iconTheme": "vscode-icons",
+    "fileheader.configObj": {
+        "autoAdd": true, // 将该选项设置为true即可开启
+    }, 
+    "code-runner.runInTerminal": true
 }
